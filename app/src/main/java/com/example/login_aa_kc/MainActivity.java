@@ -2,6 +2,7 @@ package com.example.login_aa_kc;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -28,9 +29,9 @@ public class MainActivity extends AppCompatActivity {
 
         if(txtUsu.getText().toString().equals("admin") && txtPass.getText().toString().equals("admin")){
 
-            login = (TextView) findViewById(R.id.txt);
-            login.setText("Ingreso Correcto");
-
+            Intent ok = new Intent(this,OkActivity.class);
+            ok.putExtra("nombre",txtUsu.getText().toString());
+            startActivity(ok);
 
         }else{
             //wrong password
